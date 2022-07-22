@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.netflix.com</title>
+    <style>
+#search-bar{
+width: 50%;
+height: 2rem;
+margin-left: 8%;
+background-color: rgba(128, 128, 128, 0.575);
+border: 1px solid black;
+border-radius: 6px;
+}
+#heroic-movie{
+width: 37rem;
+height: 17rem;
+border: 1px solid white;
+border-radius: 2px;
+}
+#heroic-movie-details{
+ width: 26.5rem;
+height: 17rem;
+border: 1px solid white;
+border-radius: 2px;
+margin-left: 30px;
+}
+#heroic{
+    margin-top: 15px;
+    justify-content: space-around;
+    justify-content: center;
+    margin-left: 18px;
+}
+#nigerian-movies{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#one{
+    width: 15rem;
+    height: 18rem;
+    border: 1px solid white;
+    flex-wrap: wrap;
+    border-radius: 2px;
+    margin-left: 30px;
+    cursor: pointer;
+    display: inline-block;
+}
+#rate{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid red;
+    position: absolute;
+    margin-left: 170px;
+    margin-top: 250px;
+}
+#rr{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid gold;
+    margin-left: 4px;
+    margin-top: 4px;
+} 
+
+#rating{
+    text-align: center;
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    font-weight: bolder;
+    margin-left: 5px;
+    color: white;
+    font-size: 17px;
+}
+#watch{
+    display: inline-block;
+    border: none;
+    position: absolute;
+    margin-left: 80px;
+    margin-top: 100px;
+    display: none;
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+    text-decoration: none;
+    }
+    #details-one{
+        width: 100px;
+        height: 130px;
+        border: 1px solid white;
+        margin-left: 20px;
+        margin-top: 20px;
+        border-radius: 1px;
+    }
+    #text{
+margin-left: 50px;
+    }
+    #name{
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 19px;
+        font-weight: bolder;
+        font-family: cursive;
+    }
+    #category{
+        background-color: transparent;
+        border: none;
+        color: white;
+    }
+@keyframes fadeInOpacity {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+#trailer{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+@media screen and(max-width:600px){
+  #heroic{
+    display: inline-block;
+  }
+  #heroic-movie-details{
+      margin-top: 5px;
+  }
+  #heroic-movie{
+width: 100%;
+  }
+  #one{
+    width: 18rem;
+  }
+}
+    </style>
+</head>
+<body style="background-color: rgba(0, 0, 0, 0.884);">
+    <input type="search" name="" id="search-bar" oninput="search()">
+    <div style="display: flex;" id="heroic">
+    <div id="heroic-movie"></div>
+<div id="heroic-movie-details">
+    <div id="details-one"></div>
+</div>
+</div>
+<div id="nigerian-movies">
+    <div style="display: inline-block;">
+<div id="one" onmouseover="over(event)"  onmouseleave="leave(event)" onclick="modal()" style="background-image: url(../portfolio/cench2.jfif);background-size: cover;background-repeat: no-repeat;">
+    <div id="watch">
+        <img src="../boostrap/telegram.svg" alt="" style="width: 40px;height: 30px;margin-left: 23px;"><br>
+        <button id="trailer">Watch Trailer</button>
+    </div>
+    <div id="rate">
+        <div id="rr">
+        <button id="rating">80</button>
+    </div>
+    </div>  
+</div><br>
+<div id="text">
+    <button id="name">King Of Boys</button><br>
+    <address id="category">Thriller</address>
+    </div>
+</div>
+<div style="display: inline-block;">
+<div id="one" onmouseover="over(event)" onmouseleave="leave(event)" onclick="modal()" style="background-image: url(../portfolio/cench3.jfif);background-size: cover;background-repeat: no-repeat;">
+    <div id="watch">
+        <img src="../boostrap/telegram.svg" alt="" style="width: 40px;height: 30px;margin-left: 23px;"><br>
+        <button id="trailer">Watch Trailer</button>
+    </div>
+    <div id="rate">
+        <div id="rr">
+        <button id="rating">80</button>
+    </div>
+    </div>
+</div>
+<div id="text">
+<button id="name">King Of Boys</button><br>
+<address id="category">Thriller</address>
+</div>
+</div>
+<div style="display: inline-block;">
+<div id="one" onmouseover="over(event)" onmouseleave="leave(event)"  onclick="modal()" style="background-image: url(../portfolio/cench4.jfif);background-size: cover;background-repeat: no-repeat;">
+    <div id="watch">
+        <img src="../boostrap/telegram.svg" alt="" style="width: 40px;height: 30px;margin-left: 23px;"><br>
+        <button id="trailer">Watch Trailer</button>
+    </div>
+    <div id="rate">
+        <div id="rr">
+        <button id="rating">80</button>
+    </div>
+    </div>
+</div>
+<div id="text">
+    <button id="name">King Of Boys</button><br>
+    <address id="category">Thriller</address>
+    </div>
+    </div>
+    <div style="display: inline-block;">
+<div id="one" onmouseover="over(event)" onmouseleave="leave(event)" onclick="modal()" style="background-image: url(../portfolio/cench1.jfif);background-size: cover;background-repeat: no-repeat;">
+    <div id="watch">
+        <img src="../boostrap/telegram.svg" alt="" style="width: 40px;height: 30px;margin-left: 23px;"><br>
+        <button id="trailer">Watch Trailer</button>
+    </div>
+    <div id="rate">
+        <div id="rr">
+        <button id="rating">80</button>
+    </div>
+    </div>
+</div>
+<div id="text">
+    <button id="name">King Of Boys</button><br>
+    <address id="category">Thriller</address>
+    </div>
+    </div>
+</div>
+
+
+
+<div id="nigerian-movies">
+    <div style="display: inline-block;">
+<div id="one" onmouseover="over(event)"  onmouseleave="leave(event)" onclick="modal()" style="background-image: url(../portfolio/cench2.jfif);background-size: cover;background-repeat: no-repeat;">
+    <div id="watch">
+        <img src="../boostrap/telegram.svg" alt="" style="width: 40px;height: 30px;margin-left: 23px;"><br>
+        <button id="trailer">Watch Trailer</button>
+    </div>
+    <div id="rate">
+        <div id="rr">
+        <button id="rating">80</button>
+    </div>
+    </div>  
+</div><br>
+<div id="text">
+    <button id="name">King Of Boys</button><br>
+    <address id="category">Thriller</address>
+    </div>
+</div>
+<div style="display: inline-block;">
+<div id="one" onmouseover="over(event)" onmouseleave="leave(event)" onclick="modal()" style="background-image: url(../portfolio/cench3.jfif);background-size: cover;background-repeat: no-repeat;">
+    <div id="watch">
+        <img src="../boostrap/telegram.svg" alt="" style="width: 40px;height: 30px;margin-left: 23px;"><br>
+        <button id="trailer">Watch Trailer</button>
+    </div>
+    <div id="rate">
+        <div id="rr">
+        <button id="rating">80</button>
+    </div>
+    </div>
+</div>
+<div id="text">
+<button id="name">King Of Boys</button><br>
+<address id="category">Thriller</address>
+</div>
+</div>
+<div style="display: inline-block;">
+<div id="one" onmouseover="over(event)" onmouseleave="leave(event)"  onclick="modal()" style="background-image: url(../portfolio/cench4.jfif);background-size: cover;background-repeat: no-repeat;">
+    <div id="watch">
+        <img src="../boostrap/telegram.svg" alt="" style="width: 40px;height: 30px;margin-left: 23px;"><br>
+        <button id="trailer">Watch Trailer</button>
+    </div>
+    <div id="rate">
+        <div id="rr">
+        <button id="rating">80</button>
+    </div>
+    </div>
+</div>
+<div id="text">
+    <button id="name">King Of Boys</button><br>
+    <address id="category">Thriller</address>
+    </div>
+    </div>
+    <div style="display: inline-block;">
+<div id="one" onmouseover="over(event)" onmouseleave="leave(event)" onclick="modal()" style="background-image: url(../portfolio/cench1.jfif);background-size: cover;background-repeat: no-repeat;">
+    <div id="watch">
+        <img src="../boostrap/telegram.svg" alt="" style="width: 40px;height: 30px;margin-left: 23px;"><br>
+        <button id="trailer">Watch Trailer</button>
+    </div>
+    <div id="rate">
+        <div id="rr">
+        <button id="rating">80</button>
+    </div>
+    </div>
+</div>
+<div id="text">
+    <button id="name">King Of Boys</button><br>
+    <address id="category">Thriller</address>
+    </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+let data =  window.fetch('')
+.then(res => res.json())
+.then(data => {
+    info(data)
+})
+.catch(err => {
+    console.log(err)
+})
+function info(data) {
+    console.log(data)
+}
+
+    function over(ev) {
+        ev.currentTarget.style.filter = 'grayscale(1)'
+        // ev.getElementById('watch').style.display = 'inherit'
+    }
+      function leave(ye) {  
+            ye.currentTarget.style.filter = 'grayscale(0)'
+            // ye.getElementById('watch').style.display = 'none'
+        }
+//search
+function search() {
+    
+} 
+function modal(ei) {
+    ei.currentTarget.style.width = '450px'
+    ei.currentTarget.style.height = '400px'
+}
+</script>
