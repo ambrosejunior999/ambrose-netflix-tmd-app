@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: black;
+        }
+        #btn{
+            width:150px;
+            height:35px;
+            border:1px solid red ;
+            font-family:cursive ;
+            font-size: 17px;
+            background-color: black;
+            color: white;
+            border-radius: 20px 40px;
+            margin-left: 46%;
+            cursor: pointer;
+        }
+        #btn:hover{
+background-color: white;
+color: black;
+transition: 1s;
+        }
+
+        #imge {
+            width: 230px;
+            height: 230px;
+            border-radius: 5px;
+
+        }
+
+        .div1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            justify-content: center;
+        }
+
+        .div3 {
+            width: 25%;
+        }
+        .div4{
+            width: 250px;
+        }
+        .title{
+            color: red;
+            font-family: cursive;
+            font-size: 20px;
+        }
+        .overview{
+            color: yellow;
+            height: 60px;
+            overflow: auto;
+        }
+        #input{
+            width: 50%;
+            margin-left: 5%;
+            margin-top: 5px;
+            height: 35px;
+            color: gold;
+        }
+    </style>
+
+</head>
+
+<body>
+    <input type="text" id="input">
+    <div class="div1 ">
+    </div>
+<button id="btn">Scroll to top</button>
+
+</body>
+
+</html>
+<script>
+    const API_key = "api_key=982994cd6c8a109004bff7b431789d7e"
+    const BASE_URL = "https://api.themoviedb.org/3"
+    const API_URL = BASE_URL + "/discover/movie?sort_by=popularity.desc&"
+        + API_key;
+    const IMG_URL = "https://image.tmdb.org/t/p/w500"
+
+    Mymovies(API_URL);
+
+    function Mymovies(url) {
+        fetch(url).then(res => res.json()).then(data => {
+            console.log(data)
+            Viewmovie(data.results)
+        })
+    }
+
+    function Viewmovie(movie) {
+        console.log(movie)
+
+        movie.map((value) => {
+            document.querySelector(".div1").innerHTML += `
+        <div class="div3">
+            <div class="div2">
+             <img id="imge" src="${IMG_URL + value.poster_path}" alt="" onmouseover="over()" onmouseleave="leave()">
+            </div>
+            <div class="div4">
+                <h4 class="title">${value.title}</h4>
+                <address class="overview" >${value.overview}</address>
+            </div>
+            <div>
+                <h1></h1>
+            </div> 
+        </div> 
+     
+        
+        `
+        })
+        
+    }
+    function over(ev) {
+        ev.currentTarget.style.filter = 'grayscale(1)'
+      
+    }
+      function leave(ye) {  
+            ye.currentTarget.style.filter = 'grayscale(0)'
+        }
+        const scroll = () => {
+  window.scroll({
+      top: 0,
+      behavior: 'smooth'
+  })
+}
+document.getElementById('btn').onclick = scroll 
+
+
+</script>
